@@ -1,0 +1,60 @@
+@import "../../styles/colors";
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-top: 1px solid $light-gray-blue;
+  padding: 20px;
+  &Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+  }
+  &Content {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+    &Info {
+      display: flex;
+      flex-direction: column;
+      font-size: 16px;
+      gap: 20px;
+      color: $light-gray-blue;
+
+      &Contact {
+        display: flex;
+        width: fit-content;
+        gap: 15px;
+      }
+
+      &Email {
+        text-decoration: none;
+        color: $light-gray-blue;
+      }
+
+      &Position {
+        font-size: 16px;
+        cursor: default;
+      }
+    }
+
+    &Media {
+      &Title {
+      }
+
+      &Item {
+      }
+    }
+  }
+}
+
+.copyright {
+  &Content {
+    color: $light-gray-blue;
+  }
+}

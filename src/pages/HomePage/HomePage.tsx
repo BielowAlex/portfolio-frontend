@@ -1,11 +1,16 @@
-import React from 'react';
+import React from "react";
+import { AboutMe, Facts, Hero, Projects, Skills } from "../../components";
 
-const HomePage:React.FC = () => {
-    return (
-        <div>
-            <h1 style={{color: "black", fontSize: "50px"}}>Hello World!</h1>
-        </div>
-    );
+const HomePage: React.FC = () => {
+  return (
+    <div>
+      <Hero />
+      <Facts />
+      <Projects />
+      <AboutMe />
+      <Skills />
+    </div>
+  );
 };
 
-export {HomePage};
+export { HomePage };

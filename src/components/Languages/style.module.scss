@@ -1,0 +1,25 @@
+@import "../../styles/colors";
+
+.languages {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  color: $light_gray-blue;
+  gap: 10px;
+  line-height: 1.2;
+
+  &Title {
+    font-size: 24px;
+    color: $white;
+  }
+
+  &List {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  &Item {
+  }
+}

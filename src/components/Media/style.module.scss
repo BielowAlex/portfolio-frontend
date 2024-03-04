@@ -1,0 +1,35 @@
+@import "../../styles/colors";
+
+.media {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  color: $light_gray-blue;
+  gap: 10px;
+  line-height: 1.2;
+
+  &Title {
+    font-size: 24px;
+    color: $white;
+  }
+
+  &List {
+    display: flex;
+    gap: 10px;
+  }
+  &Item {
+    a {
+      color: $light-gray-blue;
+      text-decoration: none;
+      font-size: 32px;
+      transition: all linear 0.3s;
+    }
+
+    &:hover {
+      a {
+        color: $white;
+      }
+    }
+  }
+}

@@ -1,18 +1,19 @@
-import React, {ReactNode} from 'react';
+import React, { ReactNode } from "react";
+import { Header } from "../../components";
+import { Footer } from "../../components/Footer";
 
 type Props = {
-    children: ReactNode
-}
-
-const MainLayout:React.FC<Props> = ({children}) => {
-    return (
-        <div style={{width: "100%", minHeight:"100%"}}>
-            <h1>ASDASDASDASDASDSAD</h1>
-            <div>
-                {children}
-            </div>
-        </div>
-    );
+  children: ReactNode;
 };
 
-export {MainLayout};
+const MainLayout: React.FC<Props> = ({ children }) => {
+  return (
+    <div style={{ width: "100%", minHeight: "100%" }}>
+      <Header />
+      <div className="container">{children}</div>
+      <Footer />
+    </div>
+  );
+};
+
+export { MainLayout };

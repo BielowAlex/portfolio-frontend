@@ -1,0 +1,31 @@
+@import "../../styles/colors";
+
+.skillInfo {
+  position: relative;
+  display: grid;
+  grid: repeat(2, auto) / repeat(2, 180px);
+  grid-column: 2;
+  justify-content: center;
+  color: $light-gray-blue;
+  gap: 16px;
+  &List {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 8px;
+    gap: 5px;
+
+    li {
+      display: inline;
+    }
+  }
+
+  &Table {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid $light-gray-blue;
+    h3 {
+      padding: 8px;
+      border-bottom: 1px solid $light-gray-blue;
+    }
+  }
+}

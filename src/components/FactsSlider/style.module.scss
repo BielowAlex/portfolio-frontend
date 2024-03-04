@@ -1,0 +1,57 @@
+@import "../../styles/colors";
+
+.slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+
+  &Wrapper {
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+}
+
+.slide {
+  display: flex;
+  flex-direction: column;
+  color: $light-gray-blue;
+  transition: all linear 0.3s;
+
+  &Title {
+    font-size: 24px;
+    width: fit-content;
+    padding: 15px;
+    border: 1px solid $light-gray-blue;
+  }
+
+  &Content {
+    position: relative;
+
+    font-size: 22px;
+    width: fit-content;
+    margin-left: 50px;
+    padding: 20px;
+    border: 1px solid $light-gray-blue;
+  }
+}
+
+.quoteTop {
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  background: $deep-gray;
+  padding: 3px;
+}
+
+.quoteBottom {
+  position: absolute;
+  bottom: -13px;
+  right: 20px;
+  padding: 3px;
+  background: $deep-gray;
+}

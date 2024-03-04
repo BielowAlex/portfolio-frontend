@@ -1,0 +1,12 @@
+@import "../../styles/colors";
+
+.logo {
+  display: flex;
+  gap: 10px;
+  font-size: 20px;
+  color: $white;
+  cursor: pointer;
+  &Icon {
+    color: $deep_red;
+  }
+}
