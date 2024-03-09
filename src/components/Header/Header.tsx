@@ -1,10 +1,11 @@
 import React from "react";
 import style from "./style.module.scss";
 import { Logo } from "../Logo";
-import { BurgerButton, SlideAnimation } from "../UI";
+import { BurgerButton, BurgerMenu, SlideAnimation } from "../UI";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import doc from "../../assets/resume.pdf";
+import { createPortal } from "react-dom";
 
 const Header: React.FC = () => {
   return (
@@ -35,7 +36,7 @@ const Header: React.FC = () => {
           <BurgerButton />
         </div>
       </SlideAnimation>
-      {/*{createPortal(<BurgerMenu />, document.body)}*/}
+      {createPortal(<BurgerMenu />, document.body)}
     </header>
   );
 };
