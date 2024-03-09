@@ -1,5 +1,6 @@
 import React from "react";
 import { AboutMe, Facts, Hero, Projects, Skills } from "../../components";
+import { Contact } from "../../components/Contact";
 
 const HomePage: React.FC = () => {
   return (
@@ -9,6 +10,7 @@ const HomePage: React.FC = () => {
       <Projects />
       <AboutMe />
       <Skills />
+      <Contact />
     </div>
   );
 };

@@ -8,7 +8,7 @@ const Languages: React.FC = () => {
       <h3 className={style.languagesTitle}>Languages</h3>
       <ul className={style.languagesList}>
         {languagesConstant.map((el) => (
-          <li className={style.languagesItem}>
+          <li className={style.languagesItem} key={el.id}>
             {el.language}:{el.level}
           </li>
         ))}

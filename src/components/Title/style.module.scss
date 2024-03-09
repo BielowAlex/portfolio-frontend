@@ -7,9 +7,12 @@
   gap: 10px;
 
   &Content {
+    display: block;
+    width: 100%;
     min-width: fit-content;
     font-size: 32px;
     color: $white;
+    white-space: nowrap;
   }
 
   &Line {

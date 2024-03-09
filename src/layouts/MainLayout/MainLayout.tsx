@@ -1,6 +1,7 @@
 import React, { ReactNode } from "react";
 import { Header } from "../../components";
 import { Footer } from "../../components/Footer";
+import { OpacityAnimation } from "../../components/UI";
 
 type Props = {
   children: ReactNode;
@@ -11,7 +12,9 @@ const MainLayout: React.FC<Props> = ({ children }) => {
     <div style={{ width: "100%", minHeight: "100%" }}>
       <Header />
       <div className="container">{children}</div>
-      <Footer />
+      <OpacityAnimation width={"100%"}>
+        <Footer />
+      </OpacityAnimation>
     </div>
   );
 };

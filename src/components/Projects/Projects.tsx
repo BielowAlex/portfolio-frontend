@@ -5,7 +5,7 @@ import { ProjectList } from "../ProjectList";
 
 const Projects: React.FC = () => {
   return (
-    <section className={style.container}>
+    <section className={style.container} id="works">
       <Title title={"projects"} />
       <ProjectList />
     </section>

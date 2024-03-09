@@ -1,0 +1,17 @@
+@import "../../../../styles/colors";
+
+.btn {
+  font-family: "Fira Code", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.3125;
+  border: 1px solid $deep-red;
+  padding: 8px 16px;
+  background: inherit;
+  text-decoration: none;
+  color: $white;
+
+  &:hover {
+    background: $deep-red-back;
+  }
+}

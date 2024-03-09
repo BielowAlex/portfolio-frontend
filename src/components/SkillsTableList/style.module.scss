@@ -13,6 +13,7 @@
     flex-wrap: wrap;
     padding: 8px;
     gap: 5px;
+    z-index: 20;
 
     li {
       display: inline;
@@ -20,12 +21,45 @@
   }
 
   &Table {
+    position: relative;
     display: flex;
     flex-direction: column;
     border: 1px solid $light-gray-blue;
+    z-index: 20;
+    background: $deep-gray;
     h3 {
       padding: 8px;
       border-bottom: 1px solid $light-gray-blue;
     }
   }
+}
+
+.figure {
+  position: absolute;
+  z-index: 10;
+  left: 15%;
+  top: 15%;
+  width: 130px;
+}
+
+.dots {
+  position: absolute;
+  z-index: 10;
+  right: 20%;
+  top: 30%;
+}
+
+.dotsTwo {
+  position: absolute;
+  z-index: 10;
+  left: 30%;
+  bottom: 20%;
+  width: 70px;
+}
+
+.square {
+  position: absolute;
+  z-index: 10;
+  right: 15%;
+  bottom: 10%;
 }

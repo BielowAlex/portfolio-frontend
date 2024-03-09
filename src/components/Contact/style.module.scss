@@ -1,0 +1,19 @@
+@import "../../styles/colors";
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.desc {
+  width: 100%;
+  &Content {
+    font-family: "Fira Code", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.31;
+    text-align: justify;
+    color: $light-gray-blue;
+    cursor: default;
+  }
+}

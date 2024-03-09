@@ -1,4 +1,4 @@
-@import "../../../styles/colors";
+@import "../../../../styles/colors";
 
 .btn {
   font-family: "Fira Code", sans-serif;
@@ -10,6 +10,8 @@
   background: inherit;
   text-decoration: none;
   color: $white;
+  width: fit-content;
+  cursor: pointer;
 
   &:hover {
     background: $deep-red-back;

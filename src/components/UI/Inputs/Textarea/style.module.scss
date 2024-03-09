@@ -1,0 +1,46 @@
+@import "../../../../styles/colors";
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.label {
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  color: $white;
+  font-family: "Fira Code", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.31;
+  background: $deep-gray;
+  border-radius: 2px;
+  padding: 0 2px;
+}
+
+.ta {
+  display: block;
+  box-sizing: border-box;
+  background: $deep-red-back;
+  border: 1px solid $deep-red;
+  color: $white;
+  font-size: 16px;
+  font-weight: 100;
+  //height: -moz-fit-content();
+  padding: 14px 8px;
+  max-width: 100%;
+  min-width: 0;
+  width: 100%;
+  outline: none;
+
+  height: 49px;
+  margin-bottom: 10px;
+  text-align: justify;
+  resize: vertical;
+  overflow-y: hidden;
+  transition: all ease 0.4s;
+}

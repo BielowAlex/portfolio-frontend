@@ -1,17 +1,17 @@
 import React from "react";
 import style from "./style.module.scss";
-import { LinkButton } from "../Buttons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { v4 } from "uuid";
+import { LinkButton } from "../UI";
 
 type Props = {
   title: string;
   languages: string[];
   desc: string;
   poster: string;
-  liveUrl: string;
-  githubUrl: string;
+  liveUrl?: string | null;
+  githubUrl?: string | null;
 };
 
 const ProjectListItem: React.FC<Props> = ({
@@ -23,7 +23,7 @@ const ProjectListItem: React.FC<Props> = ({
   poster,
 }) => {
   return (
-    <li className={style.project}>
+    <div className={style.project}>
       <div className={style.poster}>
         <img src={poster} alt="poster" />
       </div>
@@ -39,18 +39,22 @@ const ProjectListItem: React.FC<Props> = ({
         <h3 className={style.infoTitle}>{title}</h3>
         <p className={style.infoDesc}>{desc}</p>
         <div className={style.infoButtons}>
-          <LinkButton link={liveUrl}>
-            <span>Live</span> <span>{"<~>"}</span>
-          </LinkButton>
-          <LinkButton link={githubUrl}>
-            <span>Git</span>
-            <span>
-              <FontAwesomeIcon icon={faGithub} />
-            </span>
-          </LinkButton>
+          {liveUrl && (
+            <LinkButton link={liveUrl} target="_blank">
+              <span>Live</span> <span>{"<~>"}</span>
+            </LinkButton>
+          )}
+          {githubUrl && (
+            <LinkButton link={githubUrl} target="_blank">
+              <span>Git</span>
+              <span>
+                <FontAwesomeIcon icon={faGithub} />
+              </span>
+            </LinkButton>
+          )}
         </div>
       </div>
-    </li>
+    </div>
   );
 };
 
