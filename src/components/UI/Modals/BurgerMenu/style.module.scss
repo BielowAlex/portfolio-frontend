@@ -1,0 +1,32 @@
+@import "../../../../styles/colors";
+
+.container {
+  position: absolute;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 9999;
+  background: $deep-gray;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 20px;
+
+  a {
+    font-family: "Fira Code", sans-serif;
+    font-weight: 400;
+    font-size: 38px;
+    line-height: 1.31;
+    width: 100%;
+    text-decoration: none;
+    color: $light-gray-blue;
+    padding: 10px 0;
+  }
+}

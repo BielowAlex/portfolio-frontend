@@ -7,8 +7,7 @@ const HeroInfo: React.FC = () => {
     <SlideAnimation>
       <div className={style.info}>
         <h1 className={style.infoTitle}>
-          Alex Bielow is a <br />
-          <span className="red">front-end dev</span>
+          Alex Bielow is a <span className="red">front-end dev</span>
         </h1>
         <p className={style.infoDescription}>
           He crafts responsive websites where technologies meet creativity

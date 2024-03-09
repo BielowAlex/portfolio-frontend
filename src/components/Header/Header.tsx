@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./style.module.scss";
 import { Logo } from "../Logo";
-import { SlideAnimation } from "../UI";
+import { BurgerButton, SlideAnimation } from "../UI";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import doc from "../../assets/resume.pdf";
@@ -32,8 +32,10 @@ const Header: React.FC = () => {
               </span>
             </a>
           </nav>
+          <BurgerButton />
         </div>
       </SlideAnimation>
+      {/*{createPortal(<BurgerMenu />, document.body)}*/}
     </header>
   );
 };

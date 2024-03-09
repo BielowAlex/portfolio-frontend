@@ -19,6 +19,8 @@
 
 .nav {
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 25px;
   a {
     text-decoration: none;
@@ -29,5 +31,19 @@
     &:hover {
       color: white;
     }
+  }
+}
+
+@media screen and (max-width: 875px) {
+  .header {
+    &Container {
+      padding: 20px !important;
+    }
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .nav {
+    display: none;
   }
 }
