@@ -1,4 +1,5 @@
 @import "../../../../styles/colors";
+@import "../../../../styles/mixins";
 
 .container {
   position: relative;
@@ -15,7 +16,7 @@
   color: $white;
   font-family: "Fira Code", sans-serif;
   font-weight: 400;
-  font-size: 18px;
+  @include adaptive-font(18, 14);
   line-height: 1.31;
   background: $deep-gray;
   border-radius: 2px;
@@ -28,7 +29,7 @@
   background: $deep-red-back;
   border: 1px solid $deep-red;
   color: $white;
-  font-size: 16px;
+  @include adaptive-font(18, 16);
   font-weight: 100;
   //height: -moz-fit-content();
   padding: 14px 8px;
@@ -38,7 +39,6 @@
   outline: none;
 
   height: 49px;
-  margin-bottom: 10px;
   text-align: justify;
   resize: vertical;
   overflow-y: hidden;

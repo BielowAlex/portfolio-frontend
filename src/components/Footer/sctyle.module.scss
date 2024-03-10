@@ -1,4 +1,5 @@
 @import "../../styles/colors";
+@import "../../styles/mixins";
 
 .footer {
   display: flex;
@@ -22,6 +23,8 @@
     &Info {
       display: flex;
       flex-direction: column;
+      align-items: center;
+      justify-content: center;
       font-size: 16px;
       gap: 20px;
       color: $light-gray-blue;
@@ -55,6 +58,37 @@
 
 .copyright {
   &Content {
+    @include adaptive-font(16, 12);
     color: $light-gray-blue;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .footer {
+    &Content {
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+
+      &Info {
+        &Contact {
+          justify-content: center;
+          flex-wrap: wrap;
+          & > div {
+            font-size: 18px !important;
+          }
+        }
+        &Email {
+          @include adaptive-font(16, 12);
+          text-decoration: none;
+          color: $light-gray-blue;
+        }
+        &Position {
+          @include adaptive-font(16, 12);
+          cursor: default;
+        }
+      }
+    }
   }
 }

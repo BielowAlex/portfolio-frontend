@@ -6,4 +6,17 @@
   align-items: center;
   gap: 166px;
   overflow: hidden;
+  margin-top: 100px;
+}
+
+@media screen and (max-width: 750px) {
+  .container {
+    gap: 50px;
+  }
+}
+
+@media screen and (max-width: 685px) {
+  .container {
+    flex-wrap: wrap;
+  }
 }

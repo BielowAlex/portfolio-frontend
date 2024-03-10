@@ -1,4 +1,5 @@
 @import "../../styles/colors";
+@import "../../styles/mixins";
 
 .info {
   display: flex;
@@ -10,8 +11,8 @@
 
   p {
     max-width: 450px;
-    font-size: 18px;
     line-height: 1.56;
+    @include adaptive-font(18, 14);
   }
 
   &Title {
@@ -21,6 +22,20 @@
     & span {
       font-weight: 600;
     }
-    font-size: 42px;
+    @include adaptive-font(42, 24);
+  }
+}
+
+@media screen and (max-width: 685px) {
+  .info {
+    justify-content: center;
+    align-items: center;
+    p {
+      text-align: center;
+    }
+
+    &Title {
+      text-align: center;
+    }
   }
 }

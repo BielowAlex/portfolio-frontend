@@ -1,7 +1,7 @@
 @import "../../../../styles/colors";
 
 .container {
-  position: absolute;
+  position: fixed;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -11,6 +11,7 @@
   width: 100vw;
   z-index: 9999;
   background: $deep-gray;
+  transition: all ease-in 0.3s;
   //transform: translateX(100%);
 }
 
@@ -19,7 +20,7 @@
   flex-direction: column;
   align-items: flex-start;
   padding-left: 20px;
-
+  width: 100%;
   a {
     font-family: "Fira Code", sans-serif;
     font-weight: 400;

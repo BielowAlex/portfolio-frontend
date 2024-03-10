@@ -1,14 +1,16 @@
 import React from "react";
 import style from "./style.module.scss";
 import { AnimationControls, motion, useAnimation } from "framer-motion";
+import { useAppDispatch, useAppSelector } from "../../../../hooks";
+import { modalActions } from "../../../../store/slices/modal.slice.ts";
 
 type Props = {
   // handleClick: () => void;
 };
 
 const BurgerButton: React.FC<Props> = () => {
-  const [isClicked, setIsClicked] = React.useState<boolean>(false);
-
+  const { isBurgerOpen } = useAppSelector((state) => state.modalReducer);
+  const dispatch = useAppDispatch();
   const firstLineController: AnimationControls = useAnimation();
   const secondLineController: AnimationControls = useAnimation();
 
@@ -26,11 +28,11 @@ const BurgerButton: React.FC<Props> = () => {
     enabled: { width: "100%", rotate: -45 },
   };
   const handleAnimateOnClick = () => {
-    setIsClicked((prev) => !prev);
+    dispatch(modalActions.burgerToggle());
   };
 
   React.useEffect(() => {
-    if (isClicked) {
+    if (isBurgerOpen) {
       firstLineController.start(firstLineVariants.inProgress);
       secondLineController.start(secondLineVariants.inProgress);
       firstLineController.start(firstLineVariants.enabled);
@@ -41,7 +43,17 @@ const BurgerButton: React.FC<Props> = () => {
       firstLineController.start(firstLineVariants.disabled);
       secondLineController.start(secondLineVariants.disabled);
     }
-  }, [isClicked]);
+  }, [
+    firstLineController,
+    firstLineVariants.disabled,
+    firstLineVariants.enabled,
+    firstLineVariants.inProgress,
+    isBurgerOpen,
+    secondLineController,
+    secondLineVariants.disabled,
+    secondLineVariants.enabled,
+    secondLineVariants.inProgress,
+  ]);
 
   return (
     <div onClick={handleAnimateOnClick} className={style.container}>

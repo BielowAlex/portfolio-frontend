@@ -1,4 +1,5 @@
 @import "../../styles/colors";
+@import "../../styles/mixins";
 
 .slider {
   display: flex;
@@ -23,7 +24,7 @@
   transition: all linear 0.3s;
 
   &Title {
-    font-size: 24px;
+    @include adaptive-font(24, 18);
     width: fit-content;
     padding: 15px;
     border: 1px solid $light-gray-blue;
@@ -32,7 +33,7 @@
   &Content {
     position: relative;
 
-    font-size: 22px;
+    @include adaptive-font(22, 16);
     width: fit-content;
     margin-left: 50px;
     padding: 20px;

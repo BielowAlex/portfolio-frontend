@@ -1,4 +1,5 @@
 @import "../../styles/colors";
+@import "../../styles/mixins";
 
 .skillInfo {
   position: relative;
@@ -16,6 +17,7 @@
     z-index: 20;
 
     li {
+      @include adaptive-font(16, 12);
       display: inline;
     }
   }
@@ -29,6 +31,7 @@
     background: $deep-gray;
     h3 {
       padding: 8px;
+      @include adaptive-font(16, 12);
       border-bottom: 1px solid $light-gray-blue;
     }
   }
