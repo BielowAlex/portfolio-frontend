@@ -2,7 +2,7 @@ import { v4 } from "uuid";
 import react from "../assets/skills/react.svg";
 import nest from "../assets/skills/nestjs.svg";
 import next from "../assets/skills/nextjs.svg";
-import typescript from "../assets/skills/nextjs.svg";
+import typescript from "../assets/skills/typescript.svg";
 import redux from "../assets/skills/redux.svg";
 import express from "../assets/skills/express.svg";
 import node from "../assets/skills/nodejs-icon.svg";

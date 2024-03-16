@@ -1,24 +1,67 @@
 @import "../../styles/colors";
 
 .carrousel {
-  position: absolute;
+  position: relative;
   left: 0;
   top: 0;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   //gap: 15px;
   min-height: fit-content;
-  min-width: 100%;
+  width: fit-content;
+  animation: swipe var(--speed) linear infinite;
 }
 
 .carrouselWrapper {
   position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   width: 100%;
+  min-width: 100%;
   min-height: 250px;
   overflow-x: hidden;
+  &::before {
+    content: "";
+    position: absolute;
+    left: -50px;
+    height: 100%;
+    background: $deep-gray;
+    width: 60px;
+    z-index: 20;
+    box-shadow: $deep-gray -10px -10px 100px 200px;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    right: -50px;
+    height: 100%;
+    background: $deep-gray;
+    width: 60px;
+    z-index: 20;
+    box-shadow: $deep-gray -10px -10px 100px 200px;
+  }
+}
+
+@keyframes swipe {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@media screen and (max-width: 900px) {
+  .carrouselWrapper {
+    min-height: 125px;
+    &::before {
+      box-shadow: $deep-gray -10px -10px 100px 100px;
+    }
+    &::after {
+      box-shadow: $deep-gray -10px -10px 100px 100px;
+    }
+  }
 }
 
 @media screen and (max-width: 500px) {

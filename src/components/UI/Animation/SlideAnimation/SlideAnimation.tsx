@@ -50,7 +50,7 @@ const SlideAnimation: React.FC<Props> = ({
     <div
       ref={ref}
       className={className}
-      style={{ overflow: "hidden", zIndex: 30, position: "relative", width }}
+      style={{ zIndex: 30, position: "relative", width }}
     >
       <motion.div
         variants={variants}
