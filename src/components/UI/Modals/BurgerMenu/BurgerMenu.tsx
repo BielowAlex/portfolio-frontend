@@ -1,8 +1,5 @@
 import React from "react";
 import style from "./style.module.scss";
-import doc from "../../../../assets/resume.pdf";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import { useAppDispatch, useAppSelector } from "../../../../hooks";
 import {
   AnimationControls,
@@ -11,6 +8,8 @@ import {
   useAnimation,
 } from "framer-motion";
 import { modalActions } from "../../../../store/slices/modal.slice.ts";
+import { ContactInfo } from "../../../ContactInfo";
+import { ResumeButton } from "../../Buttons";
 
 const BurgerMenu: React.FC = () => {
   const { isBurgerOpen } = useAppSelector((state) => state.modalReducer);
@@ -45,26 +44,22 @@ const BurgerMenu: React.FC = () => {
       animate={controller}
       className={style.container}
     >
-      <nav className={style.nav} onClick={handleMenuClick}>
-        <a href="#">
+      <nav className={style.nav}>
+        <a href="#" onClick={handleMenuClick}>
           <span className="red">#</span>home
         </a>
-        <a href="#works">
+        <a href={"#works"} onClick={handleMenuClick}>
           <span className="red">#</span>works
         </a>
-        <a href="#about">
+        <a href={"#about"} onClick={handleMenuClick}>
           <span className="red">#</span>about-me
         </a>
-        <a href="#contact">
+        <a href={"#contact"} onClick={handleMenuClick}>
           <span className="red">#</span>contacts
         </a>
-        <a href={doc} download={"Oleksandr_Drohomyretskyi_CV"}>
-          <span className="red">
-            <b>Resume </b>
-            <FontAwesomeIcon icon={faDownload} />
-          </span>
-        </a>
+        <ResumeButton />
       </nav>
+      <ContactInfo />
     </motion.div>
   );
 };

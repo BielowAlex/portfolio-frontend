@@ -9,7 +9,7 @@ import {
 } from "framer-motion";
 import { SkillCarrouselSlide } from "../SkillCarrouselSlide";
 import { v4 } from "uuid";
-import { skillCarrousel } from "../../constant/skills.contsant.ts";
+import { skillCarrousel } from "../../constant";
 
 type Props = {
   icons: string[]; // Припускаємо, що icons це масив з шляхами до зображень або SVG
@@ -21,7 +21,9 @@ const ContinuousSlider: React.FC<Props> = ({ icons }) => {
   const windowWidth = useRef(window.innerWidth);
   const FAST_DURATION: number = 35;
   const SLOW_DURATION: number = 85;
-  const [slideWidth] = React.useState<number>(windowWidth.current / 6 - 45);
+  const [slideWidth] = React.useState<number>(
+    windowWidth.current / (windowWidth.current > 700 ? 6 : 3) - 45,
+  );
   const [duration, setDuration] = React.useState<number>(FAST_DURATION);
   const [mustFinish, setMustFinish] = React.useState<boolean>(false);
   const [rerender, setRerender] = React.useState<boolean>(false);

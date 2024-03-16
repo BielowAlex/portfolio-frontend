@@ -6,8 +6,9 @@ import TextareaAutosize from "react-textarea-autosize";
 type Props = {
   label: string;
   value: string;
-  setValue: React.Dispatch<React.SetStateAction<string>>;
+  setValue: (name: string, value: string) => void;
   required?: boolean;
+  name: string;
 };
 
 const Textarea: React.FC<Props> = ({
@@ -15,6 +16,7 @@ const Textarea: React.FC<Props> = ({
   setValue,
   value,
   required = true,
+  name,
 }) => {
   const id: string = v4();
   const textareaRef = React.useRef<HTMLTextAreaElement>(null);
@@ -28,9 +30,7 @@ const Textarea: React.FC<Props> = ({
 
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const value: string = e.currentTarget.value;
-    setValue(() => {
-      return value;
-    });
+    setValue(name, value);
   };
   return (
     <div className={style.container}>
@@ -42,6 +42,7 @@ const Textarea: React.FC<Props> = ({
         id={id}
         cols={30}
         rows={10}
+        name={name}
         required={required}
         minLength={10}
         value={value}

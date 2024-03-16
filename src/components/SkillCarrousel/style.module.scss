@@ -17,6 +17,12 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 250px;
+  min-height: 250px;
   overflow-x: hidden;
+}
+
+@media screen and (max-width: 500px) {
+  .carrouselWrapper {
+    min-height: 125px;
+  }
 }

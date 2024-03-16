@@ -8,18 +8,18 @@ import express from "../assets/skills/express.svg";
 import node from "../assets/skills/nodejs-icon.svg";
 import git from "../assets/skills/git.svg";
 
-export type Skill = {
+type Skill = {
   id: string;
   name: string;
 };
 
-export type Table = {
+type Table = {
   id: string;
   title: string;
   skills: Skill[];
 };
 
-export const skillCarrousel = [
+const skillCarrousel = [
   react,
   nest,
   next,
@@ -30,7 +30,7 @@ export const skillCarrousel = [
   git,
 ];
 
-export const skillsConstant: Table[] = [
+const skillsConstant: Table[] = [
   {
     id: v4(),
     title: "Languages",
@@ -166,3 +166,7 @@ export const skillsConstant: Table[] = [
     ],
   },
 ];
+
+export type { Table, Skill };
+
+export { skillsConstant, skillCarrousel };

@@ -1,5 +1,5 @@
 import React from "react";
-import { languagesConstant } from "../../constant/languages.constant.ts";
+import { languagesConstant } from "../../constant";
 import style from "./style.module.scss";
 
 const Languages: React.FC = () => {

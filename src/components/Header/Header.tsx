@@ -1,10 +1,7 @@
 import React from "react";
 import style from "./style.module.scss";
 import { Logo } from "../Logo";
-import { BurgerButton, BurgerMenu, SlideAnimation } from "../UI";
-import { faDownload } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import doc from "../../assets/resume.pdf";
+import { BurgerButton, BurgerMenu, ResumeButton, SlideAnimation } from "../UI";
 import { createPortal } from "react-dom";
 
 const Header: React.FC = () => {
@@ -17,21 +14,16 @@ const Header: React.FC = () => {
             <a href="#">
               <span className="red">#</span>home
             </a>
-            <a href="#works">
+            <a href={"#works"}>
               <span className="red">#</span>works
             </a>
-            <a href="#about">
+            <a href={"#about"}>
               <span className="red">#</span>about-me
             </a>
-            <a href="#contact">
+            <a href={"#contact"}>
               <span className="red">#</span>contacts
             </a>
-            <a href={doc} download={"Oleksandr_Drohomyretskyi_CV"}>
-              <span className="red">
-                <b>Resume </b>
-                <FontAwesomeIcon icon={faDownload} />
-              </span>
-            </a>
+            <ResumeButton />
           </nav>
           <BurgerButton />
         </div>

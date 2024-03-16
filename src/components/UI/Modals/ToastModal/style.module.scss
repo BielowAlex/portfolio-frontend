@@ -1,0 +1,57 @@
+@import "../../../../styles/colors";
+@import "../../../../styles/mixins";
+
+.container {
+  position: fixed;
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: $deep-gray;
+  border-radius: 25px;
+  border: 1px solid $deep-red;
+  z-index: 99999999;
+  width: 500px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 25px;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 5px;
+
+  h2 {
+    @include adaptive-font(22, 18);
+    color: $white;
+  }
+  &Line {
+    height: 1px;
+    width: 100%;
+    background: $deep-red;
+  }
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  width: 100%;
+
+  span {
+    @include adaptive-font(18, 14);
+  }
+
+  pre {
+    display: block;
+    width: 100%;
+    @include adaptive-font(16, 14);
+    color: $light-gray-blue;
+  }
+}

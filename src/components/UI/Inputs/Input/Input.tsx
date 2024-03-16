@@ -5,8 +5,10 @@ import { v4 } from "uuid";
 type Props = {
   label: string;
   value: string;
-  setValue: React.Dispatch<React.SetStateAction<string>>;
+  name: string;
+  setValue: (name: string, value: string) => void;
   required?: boolean;
+  type?: string;
 };
 
 const Input: React.FC<Props> = ({
@@ -14,14 +16,14 @@ const Input: React.FC<Props> = ({
   value,
   setValue,
   required = true,
+  type = "text",
+  name,
 }) => {
   const id: string = v4();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value: string = e.currentTarget.value;
-    setValue(() => {
-      return value;
-    });
+    setValue(name, value);
   };
 
   return (
@@ -30,8 +32,9 @@ const Input: React.FC<Props> = ({
         {label}
       </label>
       <input
-        type="text"
+        type={type}
         id={id}
+        name={name}
         className={style.in}
         value={value}
         required={required}
