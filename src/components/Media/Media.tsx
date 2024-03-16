@@ -14,22 +14,25 @@ const Media: React.FC = () => {
       <h3 className={style.mediaTitle}>Media</h3>
       <ul className={style.mediaList}>
         <li className={style.mediaItem}>
-          <a href="#" target="_blank">
+          <a href="https://github.com/BielowAlex" target="_blank">
             <FontAwesomeIcon icon={faGithub} />
           </a>
         </li>
         <li className={style.mediaItem}>
-          <a href="#" target="_blank">
+          <a
+            href="https://www.linkedin.com/in/oleksandr-drohomoretskyi-275600242/"
+            target="_blank"
+          >
             <FontAwesomeIcon icon={faLinkedin} />
           </a>
         </li>
         <li className={style.mediaItem}>
-          <a href="#" target="_blank">
+          <a href="https://www.instagram.com/alex_bielow/" target="_blank">
             <FontAwesomeIcon icon={faInstagram} />
           </a>
         </li>
         <li className={style.mediaItem}>
-          <a href="#" target="_blank">
+          <a href="https://www.facebook.com/sasha.below.336" target="_blank">
             <FontAwesomeIcon icon={faFacebook} />
           </a>
         </li>
