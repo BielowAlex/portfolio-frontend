@@ -74,7 +74,7 @@ const ToastModal: React.FC<Props> = ({
             <FontAwesomeIcon icon={faCheck} />
           </span>
         )}
-        <pre>{message}</pre>
+        <p>{message}</p>
       </div>
     </motion.div>
   );

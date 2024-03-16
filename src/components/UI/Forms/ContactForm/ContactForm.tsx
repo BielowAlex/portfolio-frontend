@@ -66,8 +66,7 @@ const ContactForm: React.FC = () => {
           return {
             ...prev,
             isShow: true,
-            setMessage:
-              "You message sent successfully, thanks for your feedback.",
+            message: "You message sent successfully, thanks for your feedback.",
           };
         });
 
@@ -87,7 +86,7 @@ const ContactForm: React.FC = () => {
             ...prev,
             isError: true,
             isShow: true,
-            setMessage: reason,
+            message: reason,
           };
         });
       });

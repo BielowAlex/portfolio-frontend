@@ -48,7 +48,7 @@
     @include adaptive-font(18, 14);
   }
 
-  pre {
+  p {
     display: block;
     width: 100%;
     @include adaptive-font(16, 14);
