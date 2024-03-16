@@ -50,7 +50,7 @@ const ToastModal: React.FC<Props> = ({
 
       return () => clearTimeout(timeoutClose);
     }
-  }, [handleCloseToast, isShow]);
+  }, [isShow]);
   return (
     <motion.div
       ref={ref}
