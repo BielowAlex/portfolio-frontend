@@ -77,58 +77,6 @@ const skillsConstant: Table[] = [
   },
   {
     id: v4(),
-    title: "Database",
-    skills: [
-      {
-        id: v4(),
-        name: "Postgresql",
-      },
-      {
-        id: v4(),
-        name: "MySql",
-      },
-      {
-        id: v4(),
-        name: "SQLLite",
-      },
-      {
-        id: v4(),
-        name: "MongoDB",
-      },
-    ],
-  },
-  {
-    id: v4(),
-    title: "Other",
-    skills: [
-      {
-        id: v4(),
-        name: "AWS S3",
-      },
-      {
-        id: v4(),
-        name: "Git",
-      },
-      {
-        id: v4(),
-        name: "Figma",
-      },
-      {
-        id: v4(),
-        name: "CSS/SCSS",
-      },
-      {
-        id: v4(),
-        name: "Postman",
-      },
-      {
-        id: v4(),
-        name: "HTML",
-      },
-    ],
-  },
-  {
-    id: v4(),
     title: "Libraries",
     skills: [
       {
@@ -162,6 +110,82 @@ const skillsConstant: Table[] = [
       {
         id: v4(),
         name: "Typeorm",
+      },
+    ],
+  },
+  {
+    id: v4(),
+    title: "Other",
+    skills: [
+      {
+        id: v4(),
+        name: "AWS S3",
+      },
+      {
+        id: v4(),
+        name: "Git",
+      },
+      {
+        id: v4(),
+        name: "Figma",
+      },
+      {
+        id: v4(),
+        name: "Agile",
+      },
+      {
+        id: v4(),
+        name: "SPA/PWA",
+      },
+      {
+        id: v4(),
+        name: "Heroku",
+      },
+      {
+        id: v4(),
+        name: "Vercel",
+      },
+      {
+        id: v4(),
+        name: "Jira",
+      },
+      {
+        id: v4(),
+        name: "Trello",
+      },
+      {
+        id: v4(),
+        name: "CSS/SCSS",
+      },
+      {
+        id: v4(),
+        name: "Postman",
+      },
+      {
+        id: v4(),
+        name: "HTML",
+      },
+    ],
+  },
+  {
+    id: v4(),
+    title: "Database",
+    skills: [
+      {
+        id: v4(),
+        name: "Postgresql",
+      },
+      {
+        id: v4(),
+        name: "MySql",
+      },
+      {
+        id: v4(),
+        name: "SQLLite",
+      },
+      {
+        id: v4(),
+        name: "MongoDB",
       },
     ],
   },
