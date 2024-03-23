@@ -24,35 +24,38 @@ const ProjectListItem: React.FC<Props> = ({
 }) => {
   return (
     <div className={style.project}>
-      <div className={style.poster}>
-        <img src={poster} alt="poster" />
+      <div className={style.projectHead}>
+        <div className={style.poster}>
+          <img src={poster} alt="poster" />
+        </div>
+        <ul className={style.languages}>
+          {languages.map((el, index) => (
+            <li key={v4()}>
+              {el}
+              {languages.length === ++index ? "." : ","}
+            </li>
+          ))}
+        </ul>
       </div>
-      <ul className={style.languages}>
-        {languages.map((el, index) => (
-          <li key={v4()}>
-            {el}
-            {languages.length === ++index ? "." : ","}
-          </li>
-        ))}
-      </ul>
+
       <div className={style.info}>
         <h3 className={style.infoTitle}>{title}</h3>
         <p className={style.infoDesc}>{desc}</p>
-        <div className={style.infoButtons}>
-          {liveUrl && (
-            <LinkButton link={liveUrl} target="_blank">
-              <span>Live</span> <span>{"<~>"}</span>
-            </LinkButton>
-          )}
-          {githubUrl && (
-            <LinkButton link={githubUrl} target="_blank">
-              <span>Git</span>
-              <span>
-                <FontAwesomeIcon icon={faGithub} />
-              </span>
-            </LinkButton>
-          )}
-        </div>
+      </div>
+      <div className={style.infoButtons}>
+        {liveUrl && (
+          <LinkButton link={liveUrl} target="_blank">
+            <span>Live</span> <span>{"<~>"}</span>
+          </LinkButton>
+        )}
+        {githubUrl && (
+          <LinkButton link={githubUrl} target="_blank">
+            <span>Git</span>
+            <span>
+              <FontAwesomeIcon icon={faGithub} />
+            </span>
+          </LinkButton>
+        )}
       </div>
     </div>
   );

@@ -35,6 +35,6 @@ export const projectList = [
     languages: ["ReactJS, Typescript", "Redux toolkit", "Axios", "RestAPI"],
     poster: poster3,
     liveUrl: null,
-    githubUrl: null,
+    githubUrl: "https://github.com/BielowAlex/portfolio-frontend",
   },
 ];
