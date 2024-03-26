@@ -52,7 +52,7 @@ const ToastModal: React.FC<Props> = ({
     }
   }, [isShow]);
   return (
-    <motion.div
+    <motion.dialog
       ref={ref}
       className={style.container}
       variants={variants}
@@ -76,7 +76,7 @@ const ToastModal: React.FC<Props> = ({
         )}
         <p>{message}</p>
       </div>
-    </motion.div>
+    </motion.dialog>
   );
 };
 
