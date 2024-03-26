@@ -4,7 +4,7 @@ import { v4 } from "uuid";
 
 const InProgress: React.FC = () => {
   const waves: React.JSX.Element[] = Array.from({ length: 10 }, () => (
-    <div key={v4()} className={style.wave} />
+    <div key={v4()} className={style.wave}></div>
   ));
 
   return <div className={style.container}>{waves}</div>;
