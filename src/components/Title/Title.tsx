@@ -27,23 +27,23 @@ const Title: React.FC<Props> = ({ title }) => {
     visible: { width: "100%", opacity: 1 },
   };
 
-  const handleAnimateShow = async () => {
-    await titleController.start(titleVariants.visible);
-    await lineController.start(lineVariants.visible);
-  };
-
-  const handleAnimateHide = async () => {
-    await lineController.start(lineVariants.hidden);
-    await titleController.start(titleVariants.hidden);
-  };
-
   React.useEffect(() => {
     if (isInView) {
-      handleAnimateShow().then();
+      titleController.start(titleVariants.visible).then();
+      lineController.start(lineVariants.visible).then();
     } else {
-      handleAnimateHide().then();
+      lineController.start(lineVariants.hidden).then();
+      titleController.start(titleVariants.hidden).then();
     }
-  }, [isInView]);
+  }, [
+    isInView,
+    lineController,
+    lineVariants.hidden,
+    lineVariants.visible,
+    titleController,
+    titleVariants.hidden,
+    titleVariants.visible,
+  ]);
 
   return (
     <div ref={scopeRef} className={style.title}>
