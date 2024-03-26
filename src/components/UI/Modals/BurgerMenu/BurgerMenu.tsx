@@ -39,7 +39,7 @@ const BurgerMenu: React.FC = () => {
   }, [isBurgerOpen]);
 
   return (
-    <motion.div
+    <motion.dialog
       variants={variants}
       animate={controller}
       className={style.container}
@@ -60,7 +60,7 @@ const BurgerMenu: React.FC = () => {
         <ResumeButton />
       </nav>
       <ContactInfo />
-    </motion.div>
+    </motion.dialog>
   );
 };
 
