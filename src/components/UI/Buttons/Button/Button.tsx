@@ -3,10 +3,15 @@ import style from "./style.module.scss";
 
 type Props = {
   children: ReactNode;
+  handleClick?: () => void;
 };
 
-const Button: React.FC<Props> = ({ children }) => {
-  return <button className={style.btn}>{children}</button>;
+const Button: React.FC<Props> = ({ children, handleClick }) => {
+  return (
+    <button onClick={handleClick} className={style.btn}>
+      {children}
+    </button>
+  );
 };
 
 export { Button };

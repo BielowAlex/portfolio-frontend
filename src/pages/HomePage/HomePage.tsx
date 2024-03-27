@@ -5,6 +5,7 @@ import { Contact } from "../../components/Contact";
 const HomePage: React.FC = () => {
   return (
     <div>
+      {/*<ErrorPage error={new Error("bad face")} />*/}
       <Hero />
       <Facts />
       <Projects />
