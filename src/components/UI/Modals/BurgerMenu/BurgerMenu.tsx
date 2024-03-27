@@ -7,7 +7,7 @@ import {
   motion,
   useAnimation,
 } from "framer-motion";
-import { modalActions } from "../../../../store/slices/modal.slice.ts";
+import { modalActions } from "../../../../store";
 import { ContactInfo } from "../../../ContactInfo";
 import { ResumeButton } from "../../Buttons";
 import { Dots, Figure } from "../../Icons";
