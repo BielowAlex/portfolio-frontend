@@ -10,6 +10,7 @@ import {
 import { modalActions } from "../../../../store/slices/modal.slice.ts";
 import { ContactInfo } from "../../../ContactInfo";
 import { ResumeButton } from "../../Buttons";
+import { Dots, Figure } from "../../Icons";
 
 const BurgerMenu: React.FC = () => {
   const { isBurgerOpen } = useAppSelector((state) => state.modalReducer);
@@ -59,6 +60,8 @@ const BurgerMenu: React.FC = () => {
         </a>
         <ResumeButton />
       </nav>
+      <Dots className={style.dots} />
+      <Figure className={style.figure} />
       <ContactInfo />
     </motion.dialog>
   );
