@@ -9,7 +9,7 @@ import { createPortal } from "react-dom";
 import { ToastModal } from "../../Modals";
 import { ToastValue } from "../../../../types/toast.types.ts";
 
-const ContactForm: React.FC = () => {
+const ContactForm: React.FC = React.memo(() => {
   const [formValue, setFormValue] = React.useState<FormValue>({
     message: "",
     name: "",
@@ -28,69 +28,81 @@ const ContactForm: React.FC = () => {
     publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
   };
 
-  const handleChangeFormValue = (name: string, value: string) => {
-    setFormValue((prev) => {
-      return {
-        ...prev,
-        [name]: value,
-      };
-    });
-  };
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    const errors: FormValue = ContactFormValidation(formValue);
-    const isValid: boolean = Object.values(errors).every((el) => el === "");
-
-    setToastValue((prev) => {
-      return { ...prev, isError: !isValid };
-    });
-
-    if (!isValid) {
-      setToastValue((prev) => {
+  const handleChangeFormValue = React.useCallback(
+    (name: string, value: string) => {
+      setFormValue((prev) => {
         return {
           ...prev,
-          message: Object.values(errors).join("\n"),
-          isShow: true,
+          [name]: value,
         };
       });
-      return;
-    }
+    },
+    [],
+  );
 
-    EmailJS.send(emailJsKeys.serviceId, emailJsKeys.templateId, formValue, {
-      publicKey: emailJsKeys.publicKey,
-    })
-      .then(() => {
-        setToastValue((prev) => {
-          return {
-            ...prev,
-            isShow: true,
-            message: "You message sent successfully, thanks for your feedback.",
-          };
-        });
+  const handleSubmit = React.useCallback(
+    async (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
 
-        setFormValue(() => {
-          return {
-            message: "",
-            name: "",
-            email: "",
-            subject: "",
-          };
-        });
-      })
-      .catch((reason) => {
-        console.error(reason);
-        setToastValue((prev) => {
-          return {
-            ...prev,
-            isError: true,
-            isShow: true,
-            message: reason,
-          };
-        });
+      const errors: FormValue = ContactFormValidation(formValue);
+      const isValid: boolean = Object.values(errors).every((el) => el === "");
+
+      setToastValue((prev) => {
+        return { ...prev, isError: !isValid };
       });
-  };
+
+      if (!isValid) {
+        setToastValue((prev) => {
+          return {
+            ...prev,
+            message: Object.values(errors).join("\n"),
+            isShow: true,
+          };
+        });
+        return;
+      }
+
+      EmailJS.send(emailJsKeys.serviceId, emailJsKeys.templateId, formValue, {
+        publicKey: emailJsKeys.publicKey,
+      })
+        .then(() => {
+          setToastValue((prev) => {
+            return {
+              ...prev,
+              isShow: true,
+              message:
+                "You message sent successfully, thanks for your feedback.",
+            };
+          });
+
+          setFormValue(() => {
+            return {
+              message: "",
+              name: "",
+              email: "",
+              subject: "",
+            };
+          });
+        })
+        .catch((reason) => {
+          console.error(reason);
+          setToastValue((prev) => {
+            return {
+              ...prev,
+              isError: true,
+              isShow: true,
+              message: reason,
+            };
+          });
+        });
+    },
+    [
+      emailJsKeys.publicKey,
+      emailJsKeys.serviceId,
+      emailJsKeys.templateId,
+      formValue,
+    ],
+  );
 
   return (
     <form onSubmit={handleSubmit} className={style.container}>
@@ -121,12 +133,13 @@ const ContactForm: React.FC = () => {
         setValue={handleChangeFormValue}
       />
       <Button> Send {"=>"} </Button>
-      {createPortal(
-        <ToastModal toastValue={toastValue} setToastValue={setToastValue} />,
-        document.body,
-      )}
+      {toastValue.isShow &&
+        createPortal(
+          <ToastModal toastValue={toastValue} setToastValue={setToastValue} />,
+          document.body,
+        )}
     </form>
   );
-};
+});
 
 export { ContactForm };

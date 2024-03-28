@@ -11,45 +11,41 @@ type Props = {
   name: string;
 };
 
-const Textarea: React.FC<Props> = ({
-  label,
-  setValue,
-  value,
-  required = true,
-  name,
-}) => {
-  const id: string = v4();
-  const textareaRef = React.useRef<HTMLTextAreaElement>(null);
+const Textarea: React.FC<Props> = React.memo(
+  ({ label, setValue, value, required = true, name }) => {
+    const id: string = v4();
+    const textareaRef = React.useRef<HTMLTextAreaElement>(null);
 
-  React.useEffect(() => {
-    if (textareaRef.current) {
-      textareaRef.current.style.height = "49px"; // Встановлення початкової висоти
-      textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
-    }
-  }, [value]);
+    React.useEffect(() => {
+      if (textareaRef.current) {
+        textareaRef.current.style.height = "49px"; // Встановлення початкової висоти
+        textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
+      }
+    }, [value]);
 
-  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    const value: string = e.currentTarget.value;
-    setValue(name, value);
-  };
-  return (
-    <div className={style.container}>
-      <label htmlFor={id} className={style.label}>
-        {label}
-      </label>
-      <TextareaAutosize
-        className={style.ta}
-        id={id}
-        cols={30}
-        rows={10}
-        name={name}
-        required={required}
-        minLength={10}
-        value={value}
-        onChange={handleChange}
-      />
-    </div>
-  );
-};
+    const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+      const value: string = e.currentTarget.value;
+      setValue(name, value);
+    };
+    return (
+      <div className={style.container}>
+        <label htmlFor={id} className={style.label}>
+          {label}
+        </label>
+        <TextareaAutosize
+          className={style.ta}
+          id={id}
+          cols={30}
+          rows={10}
+          name={name}
+          required={required}
+          minLength={10}
+          value={value}
+          onChange={handleChange}
+        />
+      </div>
+    );
+  },
+);
 
 export { Textarea };
