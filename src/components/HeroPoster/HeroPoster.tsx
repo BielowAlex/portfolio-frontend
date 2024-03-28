@@ -44,25 +44,23 @@ const HeroPoster: React.FC = () => {
     visible: { opacity: 1, y: 0 },
   };
 
-  const handleAnimateShow = async () => {
-    statusController.start(statusVariants.visible);
-    // await statusController.start(statusVariants.fullVisible);
-    posterController.start(posterVariants.visible);
-  };
-
-  const handleAnimateHide = async () => {
-    posterController.start(posterVariants.hidden);
-    // await statusController.start(statusVariants.visible);
-    statusController.start(statusVariants.hidden);
-  };
-
   React.useEffect(() => {
     if (isInView) {
-      handleAnimateShow().then();
+      statusController.start(statusVariants.visible);
+      posterController.start(posterVariants.visible);
     } else {
-      handleAnimateHide().then();
+      posterController.start(posterVariants.hidden);
+      statusController.start(statusVariants.hidden);
     }
-  }, [isInView]);
+  }, [
+    isInView,
+    posterController,
+    posterVariants.hidden,
+    posterVariants.visible,
+    statusController,
+    statusVariants.hidden,
+    statusVariants.visible,
+  ]);
   return (
     <div ref={scopeRef} className={style.content} onMouseMove={handleMouseMove}>
       <motion.div
@@ -86,7 +84,7 @@ const HeroPoster: React.FC = () => {
             stroke="#AC1228"
           ></path>
         </motion.svg>
-        <img src={poster} alt="me" />
+        <img src={poster} alt="me" loading="lazy" />
         <motion.div className={style.dots} animate={imgAnimation}>
           <Dots />
         </motion.div>
