@@ -1,4 +1,5 @@
 @import "../../styles/variables/colors";
+@import "../../styles/variables/mixins";
 
 .container {
   width: 100%;
@@ -17,8 +18,14 @@
 
   h2 {
     color: $white;
+    text-align: center;
+    @include adaptive-font(22, 18);
+    line-height: 1.3;
   }
-  p {
+  &Content {
     color: $light-gray-blue;
+    text-align: center;
+    line-height: 1.2;
+    @include adaptive-font(18, 14);
   }
 }

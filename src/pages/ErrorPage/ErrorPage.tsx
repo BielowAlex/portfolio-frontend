@@ -20,8 +20,16 @@ const ErrorPage: React.FC<Props> = ({ error }) => {
     <div className={style.container}>
       <div className={style.message}>
         <h2>Oopsi something went wrong (0_o)</h2>
-        <p>Details: {error.message}</p>
-        <Button children={"Back"} handleClick={handleNavigate} />
+        {error.message && (
+          <p className={style.messageContent} data-testid="detail">
+            Details: {error.message}
+          </p>
+        )}
+        <p className={style.messageContent} data-testid="message">
+          Sorry for wasted time, please return back. Also you can send feedback
+          about this bug.
+        </p>
+        <Button handleClick={handleNavigate}>Back</Button>
       </div>
     </div>
   );
