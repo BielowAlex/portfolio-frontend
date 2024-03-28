@@ -12,7 +12,7 @@ import { ContactInfo } from "../../../ContactInfo";
 import { ResumeButton } from "../../Buttons";
 import { Dots, Figure } from "../../Icons";
 
-const BurgerMenu: React.FC = () => {
+const BurgerMenu: React.FC = React.memo(() => {
   const { isBurgerOpen } = useAppSelector((state) => state.modalReducer);
   const dispatch = useAppDispatch();
   const controller: AnimationControls = useAnimation();
@@ -32,12 +32,15 @@ const BurgerMenu: React.FC = () => {
         ease: cubicBezier(0.35, 0.17, 0.3, 0.86),
       });
     } else {
-      controller.start(variants.hidden, {
-        ease: cubicBezier(0.35, 0.17, 0.3, 0.86),
-        duration: 0.5,
-      });
+      const closeAnimation = async () => {
+        await controller.start(variants.hidden, {
+          ease: cubicBezier(0.35, 0.17, 0.3, 0.86),
+          duration: 0.5,
+        });
+      };
+      closeAnimation();
     }
-  }, [isBurgerOpen]);
+  }, [controller, isBurgerOpen, variants.hidden, variants.open]);
 
   return (
     <motion.dialog
@@ -65,6 +68,6 @@ const BurgerMenu: React.FC = () => {
       <ContactInfo />
     </motion.dialog>
   );
-};
+});
 
 export { BurgerMenu };

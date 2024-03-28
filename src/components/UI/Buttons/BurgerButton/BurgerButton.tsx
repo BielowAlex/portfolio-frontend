@@ -4,13 +4,11 @@ import { AnimationControls, motion, useAnimation } from "framer-motion";
 import { useAppDispatch, useAppSelector } from "../../../../hooks";
 import { modalActions } from "../../../../store";
 
-const BurgerButton: React.FC = () => {
+const BurgerButton: React.FC = React.memo(() => {
   const { isBurgerOpen } = useAppSelector((state) => state.modalReducer);
   const dispatch = useAppDispatch();
   const firstLineController: AnimationControls = useAnimation();
   const secondLineController: AnimationControls = useAnimation();
-
-  // const lineAnimation = useAnimation();
 
   const firstLineVariants = {
     disabled: { y: 0, rotate: 0 },
@@ -23,9 +21,9 @@ const BurgerButton: React.FC = () => {
     inProgress: { width: "100%", rotate: 0 },
     enabled: { width: "100%", rotate: -45 },
   };
-  const handleAnimateOnClick = () => {
+  const handleAnimateOnClick = React.useCallback(() => {
     dispatch(modalActions.burgerToggle());
-  };
+  }, [dispatch]);
 
   React.useEffect(() => {
     if (isBurgerOpen) {
@@ -69,6 +67,6 @@ const BurgerButton: React.FC = () => {
       />
     </div>
   );
-};
+});
 
 export { BurgerButton };
