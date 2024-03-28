@@ -1,19 +1,14 @@
 import React from "react";
-import { InProgress } from "../../Icons";
 import style from "./style.module.scss";
+import { Logo } from "../../../Logo";
 
 const PageLoader: React.FC = () => {
   return (
     <div className={style.container}>
+      <Logo />
       <div className={style.head}>
-        <InProgress />
+        <span className={style.loader}></span>
       </div>
-      <span className={style.loading}>
-        Loading
-        <span className={style.dot}>.</span>
-        <span className={style.dot}>.</span>
-        <span className={style.dot}>.</span>
-      </span>
     </div>
   );
 };

@@ -96,7 +96,7 @@ const HeroPoster: React.FC = () => {
         transition={{ duration: 0.5 }}
       >
         <span className={style.squer} />
-        <h4>Currently work on portfolio</h4>
+        <p>Currently work on portfolio</p>
       </motion.div>
     </div>
   );
