@@ -1,1 +1,1 @@
-export * from "./modal.slice.ts";
+export * from "./ModalSlice";

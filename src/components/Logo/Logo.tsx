@@ -3,7 +3,7 @@ import style from "./style.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCode } from "@fortawesome/free-solid-svg-icons";
 import { useAppDispatch, useAppSelector } from "../../hooks";
-import { modalActions } from "../../store/slices/modal.slice.ts";
+import { modalActions } from "../../store";
 
 const Logo: React.FC = () => {
   const { isBurgerOpen } = useAppSelector((state) => state.modalReducer);

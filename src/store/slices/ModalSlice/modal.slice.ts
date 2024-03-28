@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-type State = {
+export type ModalSliceSchema = {
   isBurgerOpen: boolean;
 };
 
-const initialState: State = {
+const initialState: ModalSliceSchema = {
   isBurgerOpen: false,
 };
 
@@ -12,7 +12,7 @@ const modalSlice = createSlice({
   name: "modalSlice",
   initialState,
   reducers: {
-    burgerToggle: (state: State) => {
+    burgerToggle: (state: ModalSliceSchema) => {
       state.isBurgerOpen = !state.isBurgerOpen;
       document.body.style.overflowY = state.isBurgerOpen ? "hidden" : "unset";
     },

@@ -4,11 +4,7 @@ import { AnimationControls, motion, useAnimation } from "framer-motion";
 import { useAppDispatch, useAppSelector } from "../../../../hooks";
 import { modalActions } from "../../../../store";
 
-type Props = {
-  // handleClick: () => void;
-};
-
-const BurgerButton: React.FC<Props> = () => {
+const BurgerButton: React.FC = () => {
   const { isBurgerOpen } = useAppSelector((state) => state.modalReducer);
   const dispatch = useAppDispatch();
   const firstLineController: AnimationControls = useAnimation();
@@ -56,7 +52,11 @@ const BurgerButton: React.FC<Props> = () => {
   ]);
 
   return (
-    <div onClick={handleAnimateOnClick} className={style.container}>
+    <div
+      data-testid="burger-btn"
+      onClick={handleAnimateOnClick}
+      className={style.container}
+    >
       <motion.div
         variants={firstLineVariants}
         animate={firstLineController}
