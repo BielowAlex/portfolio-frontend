@@ -26,7 +26,7 @@ const ProjectListItem: React.FC<Props> = ({
     <div className={style.project}>
       <div className={style.projectHead}>
         <div className={style.poster}>
-          <img src={poster} alt="poster" />
+          <img src={poster} alt="poster" loading="lazy" />
         </div>
         <ul className={style.languages}>
           {languages.map((el, index) => (
