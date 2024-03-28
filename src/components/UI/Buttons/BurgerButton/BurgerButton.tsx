@@ -2,7 +2,7 @@ import React from "react";
 import style from "./style.module.scss";
 import { AnimationControls, motion, useAnimation } from "framer-motion";
 import { useAppDispatch, useAppSelector } from "../../../../hooks";
-import { modalActions } from "../../../../store/slices/modal.slice.ts";
+import { modalActions } from "../../../../store";
 
 type Props = {
   // handleClick: () => void;
