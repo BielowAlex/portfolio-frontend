@@ -7,8 +7,8 @@ const HomePage: React.FC = () => {
     <div>
       {/*<ErrorPage error={new Error("bad face")} />*/}
       <Hero />
-      <Skills />
       <Projects />
+      <Skills />
       <AboutMe />
       <Facts />
       <Contact />

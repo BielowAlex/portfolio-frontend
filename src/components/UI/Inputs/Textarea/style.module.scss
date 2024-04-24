@@ -13,7 +13,7 @@
   position: absolute;
   top: -15px;
   left: 20px;
-  color: $white;
+  color: $primary-text-color;
   font-family: "Fira Code", sans-serif;
   font-weight: 400;
   @include adaptive-font(18, 14);
@@ -28,7 +28,7 @@
   box-sizing: border-box;
   background: $deep-red-back;
   border: 1px solid $deep-red;
-  color: $white;
+  color: $primary-text-color;
   @include adaptive-font(18, 16);
   font-weight: 100;
   //height: -moz-fit-content();

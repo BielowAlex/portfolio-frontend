@@ -17,7 +17,7 @@
   gap: 15px;
 
   h2 {
-    color: $white;
+    color: $primary-text-color;
     text-align: center;
     @include adaptive-font(22, 18);
     line-height: 1.3;

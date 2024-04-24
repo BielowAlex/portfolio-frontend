@@ -13,7 +13,7 @@
     width: 100%;
     min-width: fit-content;
     @include adaptive-font(42, 24);
-    color: $white;
+    color: $primary-text-color;
     white-space: nowrap;
   }
 

@@ -29,7 +29,7 @@
 
   h2 {
     @include adaptive-font(22, 18);
-    color: $white;
+    color: $primary-text-color;
   }
   &Line {
     height: 1px;
