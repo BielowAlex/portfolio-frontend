@@ -7,7 +7,7 @@ import poster4 from "../assets/up-todo.jpg";
 export const projectList = [
   {
     id: v4(),
-    title: "Up-ToDo Fullstack",
+    title: "Up-ToDo",
     desc: "Effortlessly manage tasks across devices with our platform. Join now for seamless task organization and synchronization!",
     languages: [
       "ReactJS",
@@ -36,10 +36,11 @@ export const projectList = [
   },
   {
     id: v4(),
-    title: "Cinema website",
+    title: "Movieland",
     desc: "Commercial project in team Expletech. Landing page for the Cinema with admin dashboard. ",
     languages: [
-      "NextJs, Typescript",
+      "NextJs",
+      "Typescript",
       "Redux toolkit",
       "NestJS",
       "Typeorm",

@@ -1,9 +1,9 @@
 import React from "react";
 import style from "./style.module.scss";
+import { v4 } from "uuid";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { v4 } from "uuid";
-import { LinkButton } from "../UI";
+import { Link } from "react-router-dom";
 
 type Props = {
   title: string;
@@ -28,34 +28,33 @@ const ProjectListItem: React.FC<Props> = ({
         <div className={style.poster}>
           <img src={poster} alt="poster" loading="lazy" />
         </div>
-        <ul className={style.languages}>
-          {languages.map((el, index) => (
-            <li key={v4()}>
-              {el}
-              {languages.length === ++index ? "." : ","}
-            </li>
-          ))}
-        </ul>
+        <h3 className={style.title}>{title}</h3>
       </div>
-
+      <ul className={style.languages}>
+        {languages.map((el) => (
+          <li key={v4()}>{el}</li>
+        ))}
+      </ul>
       <div className={style.info}>
-        <h3 className={style.infoTitle}>{title}</h3>
         <p className={style.infoDesc}>{desc}</p>
       </div>
-      <div className={style.infoButtons}>
-        {liveUrl && (
-          <LinkButton link={liveUrl} target="_blank">
-            <span>Live</span> <span>{"<~>"}</span>
-          </LinkButton>
-        )}
-        {githubUrl && (
-          <LinkButton link={githubUrl} target="_blank">
-            <span>Git</span>
-            <span>
-              <FontAwesomeIcon icon={faGithub} />
-            </span>
-          </LinkButton>
-        )}
+      <div className={style.buttons}>
+        <Link
+          className={style.button}
+          to={githubUrl!}
+          target="_blank"
+          style={{ visibility: githubUrl ? "visible" : "hidden" }}
+        >
+          <FontAwesomeIcon icon={faGithub} />
+        </Link>
+        <Link
+          className={style.button}
+          to={liveUrl!}
+          target="_blank"
+          style={{ visibility: liveUrl ? "visible" : "hidden" }}
+        >
+          View project {"<~>"}
+        </Link>
       </div>
     </div>
   );
