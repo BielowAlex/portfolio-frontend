@@ -11,6 +11,7 @@ import { modalActions } from "../../../../store";
 import { ContactInfo } from "../../../ContactInfo";
 import { ResumeButton } from "../../Buttons";
 import { Dots, Figure } from "../../Icons";
+import { Media } from "../../../Media";
 
 const BurgerMenu: React.FC = React.memo(() => {
   const { isBurgerOpen } = useAppSelector((state) => state.modalReducer);
@@ -66,6 +67,7 @@ const BurgerMenu: React.FC = React.memo(() => {
       <Dots className={style.dots} />
       <Figure className={style.figure} />
       <ContactInfo />
+      <Media />
     </motion.dialog>
   );
 });
