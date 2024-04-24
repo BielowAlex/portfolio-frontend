@@ -49,7 +49,6 @@ const Title: React.FC<Props> = ({ title }) => {
     <div ref={scopeRef} className={style.title}>
       <motion.div animate={titleController} variants={titleVariants}>
         <h2 id="#title" className={style.titleContent}>
-          <span className="red">#</span>
           {title}
         </h2>
       </motion.div>
