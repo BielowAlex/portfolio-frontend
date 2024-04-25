@@ -19,7 +19,7 @@ const Logo: React.FC = React.memo(() => {
     <div className={style.logo} onClick={handleClick}>
       <FontAwesomeIcon icon={faCode} className={style.logoIcon} />
       <h3>
-        <span className="red">Alex</span> Bielow
+        <strong>Alex</strong> Bielow
       </h3>
     </div>
   );

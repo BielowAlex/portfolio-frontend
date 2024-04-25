@@ -11,18 +11,10 @@ const Header: React.FC = () => {
         <div className={`container ${style.headerContainer}`}>
           <Logo />
           <nav className={style.nav}>
-            <a href="#">
-              <span className="red">#</span>home
-            </a>
-            <a href={"#works"}>
-              <span className="red">#</span>works
-            </a>
-            <a href={"#about"}>
-              <span className="red">#</span>about-me
-            </a>
-            <a href={"#contact"}>
-              <span className="red">#</span>contacts
-            </a>
+            <a href={"#works"}>works</a>
+            <a href={"#skills"}>skills</a>
+            <a href={"#about"}>about-me</a>
+            <a href={"#contact"}>contacts</a>
             <ResumeButton />
           </nav>
           <BurgerButton />

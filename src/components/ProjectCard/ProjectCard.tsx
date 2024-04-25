@@ -24,12 +24,16 @@ const ProjectCard: React.FC<Props> = ({
 }) => {
   return (
     <div className={style.project}>
-      <div className={style.projectHead}>
+      <a
+        href={liveUrl! ?? githubUrl}
+        target="_blank"
+        className={style.projectHead}
+      >
         <div className={style.poster}>
           <img src={poster} alt="poster" loading="lazy" />
         </div>
         <h3 className={style.title}>{title}</h3>
-      </div>
+      </a>
       <ul className={style.languages}>
         {languages.map((el) => (
           <li key={v4()}>{el}</li>

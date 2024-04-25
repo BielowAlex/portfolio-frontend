@@ -1,13 +1,15 @@
 @import "../../styles/variables/colors";
+@import "../../styles/variables/mixins";
 
 .header {
   width: 100%;
   position: fixed;
   top: 0;
   z-index: 10000;
-  background: $deep-gray;
+  background: rgba(23, 23, 23, 0.59);
   transition: all linear 0.5s;
   margin-bottom: 160px;
+  border-bottom: 1px solid $primary-text-color;
 
   &Container {
     display: flex;
@@ -26,10 +28,17 @@
     text-decoration: none;
     color: $light-gray-blue;
     font-size: 16px;
+    @include adaptive-font(18, 16);
     transition: all linear 0.5s;
+    font-weight: lighter;
+    font-family: Montserrat, system-ui, sans-serif;
+
+    &:nth-last-child(1):hover {
+      color: $deep-red;
+    }
 
     &:hover {
-      color: white;
+      text-decoration: underline;
     }
   }
 }

@@ -28,17 +28,18 @@ const BurgerMenu: React.FC = React.memo(() => {
   };
 
   React.useEffect(() => {
+    const closeAnimation = async () => {
+      await controller.start(variants.hidden, {
+        ease: cubicBezier(0.35, 0.17, 0.3, 0.86),
+        duration: 0.5,
+      });
+    };
+
     if (isBurgerOpen) {
       controller.start(variants.open, {
         ease: cubicBezier(0.35, 0.17, 0.3, 0.86),
       });
     } else {
-      const closeAnimation = async () => {
-        await controller.start(variants.hidden, {
-          ease: cubicBezier(0.35, 0.17, 0.3, 0.86),
-          duration: 0.5,
-        });
-      };
       closeAnimation();
     }
   }, [controller, isBurgerOpen, variants.hidden, variants.open]);
@@ -49,23 +50,15 @@ const BurgerMenu: React.FC = React.memo(() => {
       animate={controller}
       className={style.container}
     >
-      <nav className={style.nav}>
-        <a href="#" onClick={handleMenuClick}>
-          <span className="red">#</span>home
-        </a>
-        <a href={"#works"} onClick={handleMenuClick}>
-          <span className="red">#</span>works
-        </a>
-        <a href={"#about"} onClick={handleMenuClick}>
-          <span className="red">#</span>about-me
-        </a>
-        <a href={"#contact"} onClick={handleMenuClick}>
-          <span className="red">#</span>contacts
-        </a>
+      <nav className={style.nav} onClick={handleMenuClick}>
+        <a href={"#works"}>works</a>
+        <a href={"#skills"}>skills</a>
+        <a href={"#about"}>about-me</a>
+        <a href={"#contact"}>contacts</a>
         <ResumeButton />
       </nav>
       <Dots className={style.dots} />
-      <Figure className={style.figure} />
+      <Figure className={style.figure} color={"white"} />
       <ContactInfo />
       <Media />
     </motion.dialog>

@@ -10,9 +10,10 @@
   color: $primary-text-color;
   cursor: pointer;
   &Icon {
-    color: $deep_red;
+    color: $primary-text-color;
   }
 }
+
 @media screen and (max-width: 750px) {
   .logo {
     font-size: 32px;

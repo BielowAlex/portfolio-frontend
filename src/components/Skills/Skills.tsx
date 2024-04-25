@@ -7,7 +7,7 @@ import { OpacityAnimation, SlideAnimation } from "../UI";
 
 const Skills: React.FC = () => {
   return (
-    <section className={style.skills}>
+    <section className={style.skills} id={"skills"}>
       <Title title="skills" />
       <div className={style.skillsContent} style={{ position: "relative" }}>
         <SkillTableList />
