@@ -14,7 +14,7 @@ type Props = {
   githubUrl?: string | null;
 };
 
-const ProjectListItem: React.FC<Props> = ({
+const ProjectCard: React.FC<Props> = ({
   title,
   desc,
   languages,
@@ -60,4 +60,4 @@ const ProjectListItem: React.FC<Props> = ({
   );
 };
 
-export { ProjectListItem };
+export { ProjectCard };

@@ -1,27 +1,24 @@
 import React from "react";
 import style from "./style.module.scss";
-import { skillsConstant } from "../../constant/skills.contsant.ts";
+import { skillsConstant } from "../../constant";
 import { SkillTable } from "../SkillTable";
 import { Dots, Figure, OpacityAnimation, SlideAnimation, Square } from "../UI";
 import { motion, useAnimation } from "framer-motion";
 
 const SkillTableList: React.FC = () => {
   const imgAnimation = useAnimation();
-
+  const offsetFactor = 25;
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const { clientX, clientY } = e;
     const moveX = clientX - window.innerWidth / 2;
     const moveY = clientY - window.innerHeight / 2;
-    const offsetFactor = 25;
+
     imgAnimation.start(
       {
         x: moveX / offsetFactor,
         y: moveY / offsetFactor,
       },
-      {
-        duration: 0.5,
-        ease: "linear",
-      },
+      { type: "spring", stiffness: 100, damping: 10 },
     );
   };
 

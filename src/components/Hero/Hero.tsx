@@ -10,7 +10,7 @@ const Hero: React.FC = () => {
   const middleAnimation = useAnimation();
   const bottomAnimation = useAnimation();
 
-  const y = useTransform(scrollY, [0, 500], [-50, -200]);
+  const y = useTransform(scrollY, [0, 500], ["-50%", "-70%"]);
 
   const offsetFactors = {
     img: Math.floor(Math.random() * (100 - 10 + 1)) + 10,
@@ -46,11 +46,7 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <motion.section
-      style={{ y: y }}
-      className={style.container}
-      onMouseMove={handleMouseMove}
-    >
+    <motion.section className={style.container} onMouseMove={handleMouseMove}>
       <motion.div
         animate={headAnimation}
         className={style.head}
@@ -75,11 +71,20 @@ const Hero: React.FC = () => {
           <h3>Alex Bielow</h3>
         </SlideAnimation>
       </motion.div>
-      <div className={style.poster}>
+      <motion.div
+        className={style.poster}
+        style={{
+          y: y,
+          top: "50%",
+          left: "50%",
+          translateX: "-50%",
+          translateY: "0",
+        }}
+      >
         <OpacityAnimation>
           <img src={poster} alt="me" loading="lazy" />
         </OpacityAnimation>
-      </div>
+      </motion.div>
 
       <motion.div animate={middleAnimation} className={style.middle}>
         <SlideAnimation

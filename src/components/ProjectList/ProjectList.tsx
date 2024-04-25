@@ -1,13 +1,13 @@
 import React from "react";
 import style from "./style.module.scss";
-import { ProjectListItem } from "../ProjectListItem";
+import { ProjectCard } from "../ProjectCard";
 import { projectList } from "../../constant";
 
 const ProjectList: React.FC = () => {
   return (
     <div className={style.container}>
       {projectList.map((el) => (
-        <ProjectListItem
+        <ProjectCard
           key={el.id}
           title={el.title}
           desc={el.desc}
