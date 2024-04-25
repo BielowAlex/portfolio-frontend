@@ -29,7 +29,7 @@
   justify-content: center;
   height: 100%;
   width: 100%;
-  border-bottom: 1px solid $light-gray-blue;
+  border-bottom: 1px solid $primary-text-color;
   z-index: 20;
 
   a {
@@ -39,7 +39,7 @@
     line-height: 1.31;
     width: 100%;
     text-decoration: none;
-    color: $light-gray-blue;
+    color: $primary-text-color;
     //padding: 10px 0;
     &:nth-last-child(1) {
       margin-top: 150px;

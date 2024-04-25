@@ -11,34 +11,36 @@
 
 .label {
   position: absolute;
-  top: -15px;
-  left: 20px;
+  top: 50%;
+  left: 0;
   color: $primary-text-color;
-  font-family: "Fira Code", sans-serif;
-  font-weight: 400;
+  font-family: Montserrat, system-ui, sans-serif;
+  font-weight: 500;
   @include adaptive-font(18, 14);
   line-height: 1.31;
-  background: $deep-gray;
+  background: inherit;
   border-radius: 2px;
   padding: 0 2px;
+  transition: all ease-in-out 0.2s;
 }
 
 .ta {
   display: block;
   box-sizing: border-box;
-  background: $deep-red-back;
-  border: 1px solid $deep-red;
+  background: inherit;
+  border: none;
+  border-bottom: 1px solid $primary-text-color;
   color: $primary-text-color;
-  @include adaptive-font(18, 16);
-  font-weight: 100;
-  //height: -moz-fit-content();
+  font-family: Montserrat, system-ui, sans-serif;
+  @include adaptive-font(16, 12);
+  font-weight: 200;
   padding: 14px 8px;
   max-width: 100%;
   min-width: 0;
   width: 100%;
   outline: none;
 
-  height: 49px;
+  min-height: 49px;
   text-align: justify;
   resize: vertical;
   overflow-y: hidden;

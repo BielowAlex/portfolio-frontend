@@ -4,33 +4,46 @@
 .container {
   position: relative;
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: center;
-  align-items: center;
   width: 100%;
+  &:active,
+  &:hover {
+    .label {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
 }
 
 .label {
   position: absolute;
-  top: -15px;
-  left: 20px;
+  top: 50%;
+  left: 0;
   color: $primary-text-color;
-  font-family: "Fira Code", sans-serif;
-  font-weight: 400;
+  font-family: Montserrat, system-ui, sans-serif;
+  font-weight: 500;
   @include adaptive-font(18, 16);
   line-height: 1.31;
   background: $deep-gray;
   border-radius: 2px;
   padding: 0 2px;
+  transition: all ease-in-out 0.2s;
 }
 
 .in {
   display: block;
   box-sizing: border-box;
-  background: $deep-red-back;
-  border: 1px solid $deep-red;
+  background: inherit;
+  border: none;
+  font-family: Montserrat, system-ui, sans-serif;
+
+  border-bottom: 1px solid $primary-text-color;
   color: $primary-text-color;
   @include adaptive-font(16, 12);
-  font-weight: 100;
+  font-weight: 200;
   //height: -moz-fit-content();
   height: fit-content;
   padding: 14px 8px;

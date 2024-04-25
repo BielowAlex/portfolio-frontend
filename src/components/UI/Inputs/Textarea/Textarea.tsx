@@ -14,14 +14,7 @@ type Props = {
 const Textarea: React.FC<Props> = React.memo(
   ({ label, setValue, value, required = true, name }) => {
     const id: string = v4();
-    const textareaRef = React.useRef<HTMLTextAreaElement>(null);
-
-    React.useEffect(() => {
-      if (textareaRef.current) {
-        textareaRef.current.style.height = "49px"; // Встановлення початкової висоти
-        textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
-      }
-    }, [value]);
+    const [isFocused, setIsFocused] = React.useState<boolean>(false);
 
     const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
       const value: string = e.currentTarget.value;
@@ -29,12 +22,18 @@ const Textarea: React.FC<Props> = React.memo(
     };
     return (
       <div className={style.container}>
-        <label htmlFor={id} className={style.label}>
+        <label
+          htmlFor={id}
+          className={style.label}
+          style={{ top: isFocused ? "-15px" : "30%" }}
+        >
           {label}
         </label>
         <TextareaAutosize
           className={style.ta}
           id={id}
+          onFocus={() => setIsFocused(true)}
+          onBlur={() => !value && setIsFocused(false)}
           cols={30}
           rows={10}
           name={name}

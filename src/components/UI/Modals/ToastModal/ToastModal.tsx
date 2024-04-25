@@ -3,8 +3,8 @@ import React from "react";
 import style from "./style.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faCheck,
-  faCircleExclamation,
+  faThumbsUp,
+  faTriangleExclamation,
 } from "@fortawesome/free-solid-svg-icons";
 import useOnClickOutside from "use-onclickoutside";
 import { ToastValue } from "../../../../types/toast.types.ts";
@@ -39,16 +39,16 @@ const ToastModal: React.FC<Props> = React.memo(
         controller.start(variants.hidden);
       }
     }, [controller, isShow, variants.hidden, variants.open]);
-
-    React.useEffect(() => {
-      if (isShow) {
-        const timeoutClose = setTimeout(() => {
-          handleCloseToast();
-        }, 5000);
-
-        return () => clearTimeout(timeoutClose);
-      }
-    }, [handleCloseToast, isShow]);
+    //
+    // React.useEffect(() => {
+    //   if (isShow) {
+    //     const timeoutClose = setTimeout(() => {
+    //       handleCloseToast();
+    //     }, 5000);
+    //
+    //     return () => clearTimeout(timeoutClose);
+    //   }
+    // }, [handleCloseToast, isShow]);
     return (
       <motion.dialog
         ref={ref}
@@ -57,20 +57,14 @@ const ToastModal: React.FC<Props> = React.memo(
         animate={controller}
       >
         <div className={style.title}>
-          <h2>
-            <span className="red">#</span>notify
-          </h2>
+          <h2>notify</h2>
           <div className={style.titleLine} />
         </div>
         <div className={style.content}>
           {isError ? (
-            <span className="red">
-              <FontAwesomeIcon icon={faCircleExclamation} />
-            </span>
+            <FontAwesomeIcon icon={faTriangleExclamation} />
           ) : (
-            <span style={{ color: "green" }}>
-              <FontAwesomeIcon icon={faCheck} />
-            </span>
+            <FontAwesomeIcon icon={faThumbsUp} />
           )}
           <p>{message}</p>
         </div>

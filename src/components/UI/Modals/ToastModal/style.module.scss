@@ -6,9 +6,9 @@
   top: 25px;
   left: 50%;
   transform: translateX(-50%);
-  background: $deep-gray;
+  background: rgba(23, 23, 23, 0.59);
   border-radius: 25px;
-  border: 1px solid $deep-red;
+  border: 1px solid white;
   z-index: 99999999;
   //width: 500px;
   opacity: 0;
@@ -23,7 +23,8 @@
 
 .title {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  flex-direction: column;
   width: 100%;
   gap: 5px;
 
@@ -34,7 +35,7 @@
   &Line {
     height: 1px;
     width: 100%;
-    background: $deep-red;
+    background: $primary-text-color;
   }
 }
 
@@ -46,7 +47,8 @@
 
   width: 100%;
 
-  span {
+  svg {
+    color: $primary-text-color;
     @include adaptive-font(18, 14);
   }
 

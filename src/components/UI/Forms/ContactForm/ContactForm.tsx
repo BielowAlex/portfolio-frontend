@@ -132,7 +132,7 @@ const ContactForm: React.FC = React.memo(() => {
         value={formValue.message}
         setValue={handleChangeFormValue}
       />
-      <Button> Send {"=>"} </Button>
+      <Button> Send </Button>
       {toastValue.isShow &&
         createPortal(
           <ToastModal toastValue={toastValue} setToastValue={setToastValue} />,

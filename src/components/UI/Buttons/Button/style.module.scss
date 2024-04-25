@@ -1,19 +1,16 @@
 @import "../../../../styles/variables/colors";
 
 .btn {
-  font-family: "Fira Code", sans-serif;
+  font-family: Montserrat, system-ui, sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.3125;
-  border: 1px solid $deep-red;
+  border: none;
+  border-bottom: 1px solid $primary-text-color;
   padding: 8px 16px;
   background: inherit;
   text-decoration: none;
   color: $primary-text-color;
   width: fit-content;
   cursor: pointer;
-
-  &:hover {
-    background: $deep-red-back;
-  }
 }

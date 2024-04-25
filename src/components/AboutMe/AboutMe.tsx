@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./style.module.scss";
 import { Title } from "../Title";
-import poster from "../../assets/me.png";
+import poster from "../../assets/me2.png";
 import { SlideAnimation } from "../UI";
 
 const AboutMe: React.FC = () => {

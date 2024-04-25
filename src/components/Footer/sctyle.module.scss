@@ -27,7 +27,9 @@
       justify-content: center;
       font-size: 16px;
       gap: 20px;
-      color: $light-gray-blue;
+      font-family: Montserrat, system-ui, sans-serif;
+
+      color: $primary-text-color;
 
       &Contact {
         display: flex;
@@ -36,11 +38,15 @@
       }
 
       &Email {
+        font-family: Montserrat, system-ui, sans-serif;
+
         text-decoration: none;
-        color: $light-gray-blue;
+        color: $primary-text-color;
       }
 
       &Position {
+        font-family: Montserrat, system-ui, sans-serif;
+        font-weight: 200;
         font-size: 16px;
         cursor: default;
       }
@@ -58,7 +64,7 @@
 
 .copyright {
   &Content {
-    @include adaptive-font(16, 12);
+    @include adaptive-font(12, 8);
     color: $light-gray-blue;
   }
 }

@@ -1,8 +1,8 @@
 import { v4 } from "uuid";
-import poster from "../assets/alex_films.jpg";
-import poster2 from "../assets/Screenshot 2024-03-07 172320.png";
-import poster3 from "../assets/Screenshot 2024-03-07 173643.png";
-import poster4 from "../assets/up-todo.jpg";
+import poster from "../assets/alexfilms.webp";
+import poster2 from "../assets/movieland.webp";
+import poster3 from "../assets/portfolio.webp";
+import poster4 from "../assets/todo.png";
 
 export const projectList = [
   {
