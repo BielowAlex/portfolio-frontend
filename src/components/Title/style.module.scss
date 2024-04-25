@@ -12,6 +12,8 @@
     display: block;
     width: 100%;
     min-width: fit-content;
+    font-family: Montserrat, system-ui, sans-serif !important;
+    text-transform: uppercase;
     @include adaptive-font(42, 24);
     color: $primary-text-color;
     white-space: nowrap;

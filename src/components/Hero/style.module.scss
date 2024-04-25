@@ -18,8 +18,17 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  z-index: 10;
-  transform: translate(-50%, -50%);
+  z-index: 5;
+  background: #282c33;
+  transform: rotate(-10deg) translate(-50%, -50%);
+
+  &Slice {
+    position: absolute;
+    top: -90px;
+    right: -90px;
+    transform: rotate(-15deg);
+    width: 250px;
+  }
 }
 
 .animBox {
@@ -104,9 +113,13 @@
     z-index: 20;
   }
   .poster {
-    width: 100%;
-    padding: 20px;
-    img {
+    width: 90%;
+    &Slice {
+      top: -80px;
+      right: -80px;
+      width: 200px;
+    }
+    &Content {
       width: 100%;
     }
   }

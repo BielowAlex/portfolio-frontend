@@ -12,6 +12,9 @@
   &Icon {
     color: $primary-text-color;
   }
+  &Text {
+    font-family: Montserrat, system-ui, sans-serif !important;
+  }
 }
 
 @media screen and (max-width: 750px) {

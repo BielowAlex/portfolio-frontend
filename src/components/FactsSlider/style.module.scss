@@ -28,6 +28,7 @@
     width: fit-content;
     padding: 15px;
     border: 1px solid $light-gray-blue;
+    font-family: Montserrat, system-ui, sans-serif;
   }
 
   &Content {
@@ -35,6 +36,8 @@
 
     @include adaptive-font(22, 16);
     width: fit-content;
+    font-family: Montserrat, system-ui, sans-serif;
+
     margin-left: 50px;
     padding: 20px;
     border: 1px solid $light-gray-blue;

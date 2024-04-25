@@ -8,6 +8,7 @@
   gap: 25px;
   padding: 30px;
   width: 100%;
+
   button {
     @include adaptive-font(18, 14);
   }

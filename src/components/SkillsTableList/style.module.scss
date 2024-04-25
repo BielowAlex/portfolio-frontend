@@ -17,6 +17,8 @@
     z-index: 20;
 
     li {
+      font-family: Montserrat, system-ui, sans-serif;
+      font-weight: 200;
       @include adaptive-font(16, 12);
       display: inline;
     }
@@ -30,6 +32,8 @@
     z-index: 20;
     background: $deep-gray;
     h3 {
+      font-family: Montserrat, system-ui, sans-serif;
+      font-weight: bold;
       padding: 8px;
       @include adaptive-font(16, 12);
       border-bottom: 1px solid $light-gray-blue;

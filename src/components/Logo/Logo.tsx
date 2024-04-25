@@ -18,9 +18,7 @@ const Logo: React.FC = React.memo(() => {
   return (
     <div className={style.logo} onClick={handleClick}>
       <FontAwesomeIcon icon={faCode} className={style.logoIcon} />
-      <h3>
-        <strong>Alex</strong> Bielow
-      </h3>
+      <h3 className={style.logoText}>Alex Bielow</h3>
     </div>
   );
 });

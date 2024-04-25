@@ -6,7 +6,7 @@ import { faDownload } from "@fortawesome/free-solid-svg-icons";
 const ResumeButton: React.FC = () => {
   return (
     <a href={doc} download={"Oleksandr_Drohomyretskyi_Resume"} target="_blank">
-      <b>Resume </b>
+      <span>Resume</span>
       <FontAwesomeIcon icon={faDownload} />
     </a>
   );

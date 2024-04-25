@@ -1,16 +1,14 @@
 import React from "react";
 import style from "./style.module.scss";
 import poster from "../../assets/me-hero.webp";
+import slice from "../../assets/slice.png";
 import { OpacityAnimation, SlideAnimation } from "../UI";
-import { motion, useAnimation, useScroll, useTransform } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 
 const Hero: React.FC = () => {
-  const { scrollY } = useScroll(); // gives us the current scroll y value
   const headAnimation = useAnimation();
   const middleAnimation = useAnimation();
   const bottomAnimation = useAnimation();
-
-  const y = useTransform(scrollY, [0, 500], ["-50%", "-70%"]);
 
   const offsetFactors = {
     img: Math.floor(Math.random() * (100 - 10 + 1)) + 10,
@@ -71,20 +69,17 @@ const Hero: React.FC = () => {
           <h3>Alex Bielow</h3>
         </SlideAnimation>
       </motion.div>
-      <motion.div
-        className={style.poster}
-        style={{
-          y: y,
-          top: "50%",
-          left: "50%",
-          translateX: "-50%",
-          translateY: "0",
-        }}
-      >
+      <div className={style.poster}>
         <OpacityAnimation>
-          <img src={poster} alt="me" loading="lazy" />
+          <img src={slice} alt="" className={style.posterSlice} />
+          <img
+            src={poster}
+            alt="me"
+            className={style.posterContent}
+            loading="lazy"
+          />
         </OpacityAnimation>
-      </motion.div>
+      </div>
 
       <motion.div animate={middleAnimation} className={style.middle}>
         <SlideAnimation
