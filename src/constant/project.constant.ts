@@ -29,7 +29,7 @@ export const projectList = [
     id: v4(),
     title: "AlexFilms",
     desc: 'A website for trailers of the latest movies, utilizing the "TMDB API" with search functionality and various filters. The design is a Netflix clone.',
-    languages: ["ReactJS, Typescript", "Redux toolkit", "RestAPI"],
+    languages: ["ReactJS", "Typescript", "Redux toolkit", "RestAPI"],
     poster: poster,
     liveUrl: "https://alex-films.vercel.app/",
     githubUrl: "https://github.com/BielowAlex/alex_films_react",
@@ -56,7 +56,8 @@ export const projectList = [
     title: "My Portfolio",
     desc: "My portfolio, a simple landing page with an admin dashboard, a bit of animation, and a bit of love",
     languages: [
-      "ReactJS, Typescript",
+      "ReactJS",
+      "Typescript",
       "Redux toolkit",
       "Axios",
       "RestAPI",
