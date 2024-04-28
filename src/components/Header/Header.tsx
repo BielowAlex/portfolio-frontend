@@ -6,22 +6,24 @@ import { createPortal } from "react-dom";
 
 const Header: React.FC = () => {
   return (
-    <header className={style.header}>
-      <SlideAnimation width={"100%"} isHorizontal={false} isBottomStart={false}>
-        <div className={`container ${style.headerContainer}`}>
-          <Logo />
-          <nav className={style.nav}>
-            <a href={"#works"}>works</a>
-            <a href={"#skills"}>skills</a>
-            <a href={"#about"}>about-me</a>
-            <a href={"#contact"}>contacts</a>
-            <ResumeButton />
-          </nav>
-          <BurgerButton />
-        </div>
-      </SlideAnimation>
+    <SlideAnimation
+      isHorizontal={false}
+      isBottomStart={false}
+      className={style.header}
+    >
+      <div className={`container ${style.headerContainer}`}>
+        <Logo />
+        <nav className={style.nav}>
+          <a href={"#works"}>works</a>
+          <a href={"#skills"}>skills</a>
+          <a href={"#about"}>about-me</a>
+          <a href={"#contact"}>contacts</a>
+          <ResumeButton />
+        </nav>
+        <BurgerButton />
+      </div>
       {createPortal(<BurgerMenu />, document.body)}
-    </header>
+    </SlideAnimation>
   );
 };
 

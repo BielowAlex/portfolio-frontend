@@ -11,7 +11,7 @@
   line-height: 1.2;
 
   &Title {
-    @include adaptive-font(24, 18);
+    @include adaptive-font(24, 16);
     font-family: Montserrat, system-ui, sans-serif;
 
     color: $primary-text-color;
@@ -25,6 +25,6 @@
 
   &Item {
     font-family: Montserrat, system-ui, sans-serif;
-    @include adaptive-font(16, 14);
+    @include adaptive-font(16, 12);
   }
 }

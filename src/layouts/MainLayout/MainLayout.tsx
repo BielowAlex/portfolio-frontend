@@ -9,7 +9,7 @@ type Props = {
 
 const MainLayout: React.FC<Props> = ({ children }) => {
   return (
-    <div style={{ width: "100%", minHeight: "100%" }}>
+    <div className="container">
       <Header />
       <div className="container">{children}</div>
       <OpacityAnimation width={"100%"}>
