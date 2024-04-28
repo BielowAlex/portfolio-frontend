@@ -1,8 +1,6 @@
 import React from "react";
 import style from "./style.module.scss";
-import poster from "../../assets/me-hero.webp";
-import slice from "../../assets/slice.png";
-import { OpacityAnimation, SlideAnimation } from "../UI";
+import { SlideAnimation } from "../UI";
 import { motion, useAnimation } from "framer-motion";
 
 const Hero: React.FC = () => {
@@ -70,15 +68,18 @@ const Hero: React.FC = () => {
         </SlideAnimation>
       </motion.div>
       <div className={style.poster}>
-        <OpacityAnimation>
-          <img src={slice} alt="" className={style.posterSlice} />
-          <img
-            src={poster}
-            alt="me"
-            className={style.posterContent}
-            loading="lazy"
-          />
-        </OpacityAnimation>
+        <img
+          src="https://i.ibb.co/brQpyt7/slice.png"
+          alt=""
+          className={style.posterSlice}
+          loading="lazy"
+        />
+        <img
+          src="https://i.ibb.co/cgPkVnV/me-hero.webp"
+          alt="me"
+          className={style.posterContent}
+          loading="lazy"
+        />
       </div>
 
       <motion.div animate={middleAnimation} className={style.middle}>

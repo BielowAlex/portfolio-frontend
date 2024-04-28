@@ -1,7 +1,6 @@
 import React from "react";
 import style from "./style.module.scss";
 import { Title } from "../Title";
-import poster from "../../assets/me2.png";
 import { SlideAnimation } from "../UI";
 
 const AboutMe: React.FC = () => {
@@ -33,7 +32,7 @@ const AboutMe: React.FC = () => {
         </SlideAnimation>
         <SlideAnimation isLeftStart={false}>
           <div className={style.poster}>
-            <img src={poster} alt="" />
+            <img src="https://i.ibb.co/z2QsvNf/me2.png" alt="" />
           </div>
         </SlideAnimation>
       </div>

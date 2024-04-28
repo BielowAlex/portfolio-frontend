@@ -9,6 +9,7 @@
 body {
   font-family: var(--font-family-main);
   background: #171717;
+  width: 100%;
   overflow-x: hidden;
 }
 
@@ -22,9 +23,11 @@ section {
 }
 
 .container {
+  min-width: 100%;
   position: relative;
   max-width: 1366px; // Максимальна ширина, щоб контент не був занадто широким на великих екранах
   width: 100%; // Займає всю доступну ширину
+  padding: 10px;
   margin: 0 auto; // Центрування контейнера шляхом автоматичного задання відступів з обох боків
 }
 

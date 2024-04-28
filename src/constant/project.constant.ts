@@ -1,8 +1,4 @@
 import { v4 } from "uuid";
-import poster from "../assets/alexfilms.webp";
-import poster2 from "../assets/movieland.webp";
-import poster3 from "../assets/portfolio.webp";
-import poster4 from "../assets/todo.png";
 
 export const projectList = [
   {
@@ -21,7 +17,7 @@ export const projectList = [
       "MongoDB",
       "Mongoose",
     ],
-    poster: poster4,
+    poster: "https://i.ibb.co/Xp8HWXn/todo.png",
     liveUrl: "https://up-todo.vercel.app",
     githubUrl: "https://github.com/BielowAlex/up-todo",
   },
@@ -30,7 +26,7 @@ export const projectList = [
     title: "AlexFilms",
     desc: 'A website for trailers of the latest movies, utilizing the "TMDB API" with search functionality and various filters. The design is a Netflix clone.',
     languages: ["ReactJS", "Typescript", "Redux toolkit", "RestAPI"],
-    poster: poster,
+    poster: "https://i.ibb.co/926hJZQ/alexfilms.webp",
     liveUrl: "https://alex-films.vercel.app/",
     githubUrl: "https://github.com/BielowAlex/alex_films_react",
   },
@@ -47,7 +43,7 @@ export const projectList = [
       "Aws S3",
       "Jest",
     ],
-    poster: poster2,
+    poster: "https://i.ibb.co/rvCW9KL/movieland.webp",
     liveUrl: "https://www.movieland.com.ua/",
     githubUrl: null,
   },
@@ -64,7 +60,7 @@ export const projectList = [
       "Jest",
       "CI/CD",
     ],
-    poster: poster3,
+    poster: "https://i.ibb.co/qjxxGjc/portfolio.webp",
     liveUrl: null,
     githubUrl: "https://github.com/BielowAlex/portfolio-frontend",
   },
