@@ -1,17 +1,13 @@
 import React from "react";
 import style from "./style.module.scss";
 import { Logo } from "../Logo";
-import { BurgerButton, BurgerMenu, ResumeButton, SlideAnimation } from "../UI";
+import { BurgerButton, BurgerMenu, ResumeButton } from "../UI";
 import { createPortal } from "react-dom";
 
 const Header: React.FC = () => {
   return (
-    <SlideAnimation
-      isHorizontal={false}
-      isBottomStart={false}
-      className={style.header}
-    >
-      <div className={`container ${style.headerContainer}`}>
+    <div className={style.header}>
+      <div className={style.headerContainer}>
         <Logo />
         <nav className={style.nav}>
           <a href={"#works"}>works</a>
@@ -23,7 +19,7 @@ const Header: React.FC = () => {
         <BurgerButton />
       </div>
       {createPortal(<BurgerMenu />, document.body)}
-    </SlideAnimation>
+    </div>
   );
 };
 
