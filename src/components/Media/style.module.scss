@@ -11,6 +11,9 @@
   line-height: 1.2;
 
   &Title {
+    line-height: 1.2;
+    font-weight: normal;
+    font-family: Montserrat, system-ui, sans-serif;
     @include adaptive-font(24, 18);
     color: $primary-text-color;
   }

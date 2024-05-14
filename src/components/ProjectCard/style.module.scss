@@ -8,12 +8,14 @@
   align-items: flex-start;
   gap: 20px;
   padding: 10px 10px 10px 50px;
-  width: 500px;
+  max-width: 650px;
+  width: 100%;
 
   &Head {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
+    width: 100%;
   }
 
   &:hover {

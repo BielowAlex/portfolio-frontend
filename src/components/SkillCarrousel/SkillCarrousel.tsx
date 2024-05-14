@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { SkillCarrouselSlide } from "../SkillCarrouselSlide";
 import { v4 } from "uuid";
 import { skillCarrousel } from "../../constant";
+import Marquee from "react-fast-marquee";
 
 type Props = {
   icons: string[];
@@ -15,7 +16,7 @@ const ContinuousSlider: React.FC<Props> = ({ icons }) => {
   const [slideWidth] = React.useState<number>(200);
 
   return (
-    <div className={style.carrouselWrapper}>
+    <Marquee className={style.carrouselWrapper}>
       <motion.div
         className={style.carrousel}
         ref={ref}
@@ -36,7 +37,7 @@ const ContinuousSlider: React.FC<Props> = ({ icons }) => {
           <SkillCarrouselSlide slideWidth={slideWidth} url={el} key={v4()} />
         ))}
       </motion.div>
-    </div>
+    </Marquee>
   );
 };
 
