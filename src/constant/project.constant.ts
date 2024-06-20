@@ -23,12 +23,12 @@ export const projectList = [
   },
   {
     id: v4(),
-    title: "AlexFilms",
-    desc: 'A website for trailers of the latest movies, utilizing the "TMDB API" with search functionality and various filters. The design is a Netflix clone.',
-    languages: ["ReactJS", "Typescript", "Redux toolkit", "RestAPI"],
+    title: "The Cine",
+    desc: 'This website lets you search for movies by title and genre, featuring trailers for each film. It\'s the perfect place for movie enthusiasts to discover and preview films.',
+    languages: ["NextJS", "Typescript", "Zustand", "Jest", "Tailwind"],
     poster: "https://i.ibb.co/926hJZQ/alexfilms.webp",
-    liveUrl: "https://alex-films.vercel.app/",
-    githubUrl: "https://github.com/BielowAlex/alex_films_react",
+    liveUrl: "https://the-cine-fe.vercel.app/",
+    githubUrl: "https://github.com/BielowAlex/the-cine-fe",
   },
   {
     id: v4(),
